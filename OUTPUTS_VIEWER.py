@@ -623,11 +623,81 @@ class Ui_MainWindow(object):
         self.horizontalLayout_14.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_14.setSpacing(0)
         self.horizontalLayout_14.setObjectName("horizontalLayout_14")
+        self.frame_6 = QtWidgets.QFrame(self.frame_20)
+        self.frame_6.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_6.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_6.setObjectName("frame_6")
+        self.horizontalLayout_16 = QtWidgets.QHBoxLayout(self.frame_6)
+        self.horizontalLayout_16.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_16.setSpacing(0)
+        self.horizontalLayout_16.setObjectName("horizontalLayout_16")
+        self.frame_24 = QtWidgets.QFrame(self.frame_6)
+        self.frame_24.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_24.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_24.setObjectName("frame_24")
+        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.frame_24)
+        self.verticalLayout_2.setContentsMargins(0, 0, 7, 0)
+        self.verticalLayout_2.setSpacing(0)
+        self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.graph_Layout = QtWidgets.QVBoxLayout()
         self.graph_Layout.setSizeConstraint(QtWidgets.QLayout.SetMaximumSize)
         self.graph_Layout.setContentsMargins(10, 0, 10, 10)
         self.graph_Layout.setObjectName("graph_Layout")
-        self.horizontalLayout_14.addLayout(self.graph_Layout)
+        self.verticalLayout_2.addLayout(self.graph_Layout)
+        self.horizontalLayout_16.addWidget(self.frame_24)
+        self.frame_23 = QtWidgets.QFrame(self.frame_6)
+        self.frame_23.setMinimumSize(QtCore.QSize(40, 0))
+        self.frame_23.setMaximumSize(QtCore.QSize(40, 16777215))
+        self.frame_23.setStyleSheet("QCheckBox{\n"
+"    font-size: 15px;\n"
+"    border-radius: 10px;\n"
+"    padding-left: 7px;\n"
+"}\n"
+"\n"
+"QCheckBox::indicator::unchecked {\n"
+"    border:none;\n"
+"    width: 0px;\n"
+"}\n"
+"\n"
+"QCheckBox::indicator::checked {\n"
+"    border:none;\n"
+"    width: 0px;\n"
+"}\n"
+"\n"
+"QCheckBox::unchecked{\n"
+"    border: 2px solid rgb(80,80,80);\n"
+"    color: rgb(80,80,80);\n"
+"}\n"
+"\n"
+"QCheckBox::checked{\n"
+"    color:  white;\n"
+"    background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:1, y2:1, stop:0.507463 rgba(41, 170, 227, 255), stop:0.512438 rgba(22, 158, 206, 255));\n"
+"    border: 2px solid transparent;\n"
+"}")
+        self.frame_23.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_23.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_23.setObjectName("frame_23")
+        self.verticalLayout_5 = QtWidgets.QVBoxLayout(self.frame_23)
+        self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_5.setObjectName("verticalLayout_5")
+        spacerItem13 = QtWidgets.QSpacerItem(20, 73, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_5.addItem(spacerItem13)
+        self.checkBox_AccX = QtWidgets.QCheckBox(self.frame_23)
+        self.checkBox_AccX.setMinimumSize(QtCore.QSize(40, 40))
+        self.checkBox_AccX.setObjectName("checkBox_AccX")
+        self.verticalLayout_5.addWidget(self.checkBox_AccX)
+        self.checkBox_AccY = QtWidgets.QCheckBox(self.frame_23)
+        self.checkBox_AccY.setMinimumSize(QtCore.QSize(40, 40))
+        self.checkBox_AccY.setObjectName("checkBox_AccY")
+        self.verticalLayout_5.addWidget(self.checkBox_AccY)
+        self.checkBox_AccZ = QtWidgets.QCheckBox(self.frame_23)
+        self.checkBox_AccZ.setMinimumSize(QtCore.QSize(40, 40))
+        self.checkBox_AccZ.setObjectName("checkBox_AccZ")
+        self.verticalLayout_5.addWidget(self.checkBox_AccZ)
+        spacerItem14 = QtWidgets.QSpacerItem(20, 73, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_5.addItem(spacerItem14)
+        self.horizontalLayout_16.addWidget(self.frame_23)
+        self.horizontalLayout_14.addWidget(self.frame_6)
         self.verticalLayout_8.addWidget(self.frame_20)
         self.frame_3 = QtWidgets.QFrame(self.frame_10)
         self.frame_3.setMinimumSize(QtCore.QSize(0, 40))
@@ -715,24 +785,22 @@ class Ui_MainWindow(object):
 "}")
         self.pushButton_stop.setObjectName("pushButton_stop")
         self.horizontalLayout_9.addWidget(self.pushButton_stop)
-        spacerItem13 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_9.addItem(spacerItem13)
         self.frame_5 = QtWidgets.QFrame(self.frame_3)
         self.frame_5.setMinimumSize(QtCore.QSize(0, 0))
         self.frame_5.setStyleSheet("QCheckBox{\n"
 "    font-size: 15px;\n"
 "    border-radius: 10px;\n"
-"    padding-left: 9px;\n"
+"    padding-left: 7px;\n"
 "}\n"
 "\n"
 "QCheckBox::indicator::unchecked {\n"
 "    border:none;\n"
-"    image: url(:/icons/icons/icons8-check-20-dark.png);\n"
+"    width: 0px;\n"
 "}\n"
 "\n"
 "QCheckBox::indicator::checked {\n"
 "    border:none;\n"
-"    image: url(:/icons/icons/icons8-check-20.png);\n"
+"    width: 0px;\n"
 "}\n"
 "\n"
 "QCheckBox::unchecked{\n"
@@ -752,21 +820,9 @@ class Ui_MainWindow(object):
         self.horizontalLayout_15.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_15.setSpacing(10)
         self.horizontalLayout_15.setObjectName("horizontalLayout_15")
-        self.checkBox_AccX = QtWidgets.QCheckBox(self.frame_5)
-        self.checkBox_AccX.setMinimumSize(QtCore.QSize(100, 40))
-        self.checkBox_AccX.setObjectName("checkBox_AccX")
-        self.horizontalLayout_15.addWidget(self.checkBox_AccX)
-        self.checkBox_AccY = QtWidgets.QCheckBox(self.frame_5)
-        self.checkBox_AccY.setMinimumSize(QtCore.QSize(100, 40))
-        self.checkBox_AccY.setObjectName("checkBox_AccY")
-        self.horizontalLayout_15.addWidget(self.checkBox_AccY)
-        self.checkBox_AccZ = QtWidgets.QCheckBox(self.frame_5)
-        self.checkBox_AccZ.setMinimumSize(QtCore.QSize(100, 40))
-        self.checkBox_AccZ.setObjectName("checkBox_AccZ")
-        self.horizontalLayout_15.addWidget(self.checkBox_AccZ)
         self.horizontalLayout_9.addWidget(self.frame_5)
-        spacerItem14 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_9.addItem(spacerItem14)
+        spacerItem15 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_9.addItem(spacerItem15)
         self.pushButton_clean = QtWidgets.QPushButton(self.frame_3)
         self.pushButton_clean.setMinimumSize(QtCore.QSize(40, 40))
         self.pushButton_clean.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
@@ -821,10 +877,10 @@ class Ui_MainWindow(object):
         self.radioButton_ON2.setText(_translate("MainWindow", "ON"))
         self.radioButton_OFF2.setText(_translate("MainWindow", "OFF"))
         self.label_Titulo_Hoja_2.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt;\">ANALOG </span><span style=\" font-size:12pt; font-weight:600;\">INPUT</span></p></body></html>"))
+        self.checkBox_AccX.setText(_translate("MainWindow", "X"))
+        self.checkBox_AccY.setText(_translate("MainWindow", "Y"))
+        self.checkBox_AccZ.setText(_translate("MainWindow", "Z"))
         self.label.setText(_translate("MainWindow", "Period [mS] :"))
         self.pushButton_start.setText(_translate("MainWindow", "START"))
         self.pushButton_stop.setText(_translate("MainWindow", "STOP"))
-        self.checkBox_AccX.setText(_translate("MainWindow", "AXIS X"))
-        self.checkBox_AccY.setText(_translate("MainWindow", "AXIS Y"))
-        self.checkBox_AccZ.setText(_translate("MainWindow", "AXIS Z"))
 import resources_rc
