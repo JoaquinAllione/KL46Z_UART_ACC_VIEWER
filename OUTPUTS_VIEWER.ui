@@ -1417,6 +1417,7 @@ background-color: rgb(18, 18, 18);
 	font-size: 15px;
 	border-radius: 10px;
 	padding-left: 7px;
+	background-color: rgb(18, 18, 18);
 }
 
 QCheckBox::indicator::unchecked {
@@ -1430,8 +1431,8 @@ QCheckBox::indicator::checked {
 }
 
 QCheckBox::unchecked{
-	border: 2px solid rgb(80,80,80);
-	color: rgb(80,80,80);
+	border: 2px solid rgb(50,50,50);
+	color: rgb(50,50,50);
 }
 
 QCheckBox::checked{
