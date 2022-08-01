@@ -1,0 +1,1 @@
+pyuic5 OUTPUTS_VIEWER.ui -o OUTPUTS_VIEWER.py

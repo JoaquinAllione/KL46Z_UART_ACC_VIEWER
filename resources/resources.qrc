@@ -1,0 +1,12 @@
+<RCC>
+  <qresource prefix="img">
+    <file>img/settings_10.png</file>
+  </qresource>
+  <qresource prefix="icons">
+    <file>icons/icons8-check-20-dark.png</file>
+    <file>icons/icons8-check-20.png</file>
+    <file>icons/icons8-clasificar-arriba-15.png</file>
+    <file>icons/icons8-clasificar-abajo-15.png</file>
+    <file>icons/icons8-escoba-25.png</file>
+  </qresource>
+</RCC>
