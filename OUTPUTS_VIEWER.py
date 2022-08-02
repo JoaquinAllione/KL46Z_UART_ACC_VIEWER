@@ -652,6 +652,7 @@ class Ui_MainWindow(object):
 "    font-size: 15px;\n"
 "    border-radius: 10px;\n"
 "    padding-left: 7px;\n"
+"    background-color: rgb(18, 18, 18);\n"
 "}\n"
 "\n"
 "QCheckBox::indicator::unchecked {\n"
@@ -665,8 +666,8 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "QCheckBox::unchecked{\n"
-"    border: 2px solid rgb(80,80,80);\n"
-"    color: rgb(80,80,80);\n"
+"    border: 2px solid rgb(50,50,50);\n"
+"    color: rgb(50,50,50);\n"
 "}\n"
 "\n"
 "QCheckBox::checked{\n"
@@ -745,7 +746,7 @@ class Ui_MainWindow(object):
 "QSpinBox::down-button { \n"
 "    border: none;\n"
 "}")
-        self.spinBox_period.setMinimum(10)
+        self.spinBox_period.setMinimum(250)
         self.spinBox_period.setMaximum(9999)
         self.spinBox_period.setSingleStep(10)
         self.spinBox_period.setObjectName("spinBox_period")

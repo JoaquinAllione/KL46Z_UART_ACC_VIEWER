@@ -12,4 +12,6 @@ class Frame():
     FRAME_ACC_AXIS_X = ':AccX'
     FRAME_ACC_AXIS_Y = ':AccY'
     FRAME_ACC_AXIS_Z = ':AccZ'
+
+    FRAME_ACC_ALL_AXES = ':Axes'
     
