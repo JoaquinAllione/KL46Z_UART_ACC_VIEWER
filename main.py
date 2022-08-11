@@ -10,7 +10,8 @@ import numpy as np
 import math
 import frames
 from PyQt5.QtCore import QTimer
-from PyQt5.QtWidgets import QMessageBox
+from PyQt5.QtWidgets import QMessageBox, QFileDialog, QDialog
+import pyqtgraph.exporters
 
 import resources_rc
 
@@ -25,7 +26,7 @@ class MiApp(QMainWindow):
 
 		#Timer
 		self.timer=QTimer()
-
+		
 		#Serial
 		self.port = QSerialPort() 
 		self.baudratesDIC = {
@@ -40,7 +41,7 @@ class MiApp(QMainWindow):
 		}
 
 		self.ui.comboBox_baudrate.addItems(self.baudratesDIC.keys())
-		self.ui.comboBox_baudrate.setCurrentText('9600')
+		self.ui.comboBox_baudrate.setCurrentText('115200')
 		
 		self.ui.pushButton_disconnect.setEnabled(False)
 		self.ui.pushButton_connect.setEnabled(True)
@@ -73,6 +74,7 @@ class MiApp(QMainWindow):
 		self.ui.pushButton_clean.clicked.connect(self.graphClear)
 		self.ui.pushButton_start.clicked.connect(self.start)
 		self.ui.pushButton_stop.clicked.connect(self.stop)
+		self.ui.pushButton_save.clicked.connect(self.saveFileDialog)
 		self.ui.radioButton_ON1.toggled.connect(self.controlOutput_1)
 		self.ui.radioButton_ON2.toggled.connect(self.controlOutput_2)
 
@@ -101,7 +103,23 @@ class MiApp(QMainWindow):
 		else:
 			self.colorLineAccZ = '#232c3c'
 			
+
+	def saveFileDialog(self):
+		dialog = QFileDialog(self)
+		dialog.setWindowTitle('Save Graph Capture')
+		dialog.setNameFilter('img (*.png)')
+		dialog.setDirectory(QtCore.QDir.currentPath())
+		dialog.setAcceptMode(QFileDialog.AcceptSave)
+		selected = dialog.exec()
+		if selected:
+			filename = dialog.selectedFiles()[0]
+			print(filename)
+			exporter = pg.exporters.ImageExporter(self.plt.plotItem)
+			exporter.parameters()['width'] = 1080   # (note this also affects height parameter)
+			exporter.export(filename)
+	
 	def defaultPlot(self):
+		self.plt.clear()
 		x = np.linspace(0, 3 * np.pi, 100)
 		y1 = np.sin(x + np.pi)
 		y2 = np.sin(x + np.pi/2)
@@ -133,8 +151,7 @@ class MiApp(QMainWindow):
 			print('>> ' + 'DEVICE NOT OPEN' + ' <<')
 		
 	def stop(self):
-		self.timer.stop()
-		#reply = QMessageBox.warning(self, "Mensaje", "Seguro quiere salir", QMessageBox.Ok)	
+		self.timer.stop()	
 
 	def timeOut(self):
 		self.send_data(str(self.F.FRAME_ACC_ALL_AXES))
@@ -145,9 +162,8 @@ class MiApp(QMainWindow):
 		self.AccY.clear()
 		self.AccZ.clear()
 		self.n = 0
-		self.lineAccX.clear()
-		self.lineAccY.clear()
-		self.lineAccZ.clear()
+
+		self.defaultPlot()
 
 	def controlsEnabled(self, value):
 		self.ui.radioButton_ON1.setEnabled(value)
@@ -187,11 +203,10 @@ class MiApp(QMainWindow):
 			self.AccZ.append(Acc_values[2])
 			self.x.append(self.n)
 			self.n += 1 
-
+			
 			self.lineAccX = self.plt.plot(self.x, self.AccX, pen = pg.mkPen(self.colorLineAccX, width=2))
 			self.lineAccY = self.plt.plot(self.x, self.AccY, pen = pg.mkPen(self.colorLineAccY, width=2))
 			self.lineAccZ = self.plt.plot(self.x, self.AccZ, pen = pg.mkPen(self.colorLineAccZ, width=2))
-
 
 	def graphAddNewValue(self, value):
 		self.y.append(value)

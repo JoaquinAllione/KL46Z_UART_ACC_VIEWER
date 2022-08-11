@@ -824,6 +824,26 @@ class Ui_MainWindow(object):
         self.horizontalLayout_9.addWidget(self.frame_5)
         spacerItem15 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_9.addItem(spacerItem15)
+        self.pushButton_save = QtWidgets.QPushButton(self.frame_3)
+        self.pushButton_save.setMinimumSize(QtCore.QSize(40, 40))
+        self.pushButton_save.setMaximumSize(QtCore.QSize(40, 40))
+        self.pushButton_save.setStyleSheet("QPushButton{\n"
+"    border-radius: 10px;\n"
+"    color: rgb(34,36,44);\n"
+"    border: none;\n"
+"    font: 15px;\n"
+"    color: white;\n"
+"    background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:1, y2:1, stop:0.507463 rgba(41, 170, 227, 255), stop:0.512438 rgba(22, 158, 206, 255));\n"
+"    \n"
+"    image: url(:/icons/icons/icons8-gallery-25.png);\n"
+"}\n"
+"\n"
+"QPushButton::hover{\n"
+"    background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:1, y2:1, stop:0.507463 rgba(41, 170, 227, 230), stop:0.512438 rgba(22, 158, 206, 230));\n"
+"}")
+        self.pushButton_save.setText("")
+        self.pushButton_save.setObjectName("pushButton_save")
+        self.horizontalLayout_9.addWidget(self.pushButton_save)
         self.pushButton_clean = QtWidgets.QPushButton(self.frame_3)
         self.pushButton_clean.setMinimumSize(QtCore.QSize(40, 40))
         self.pushButton_clean.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))

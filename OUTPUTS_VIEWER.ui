@@ -1621,7 +1621,7 @@ QSpinBox::down-button {
 }</string>
                   </property>
                   <property name="minimum">
-                   <number>10</number>
+                   <number>250</number>
                   </property>
                   <property name="maximum">
                    <number>9999</number>
@@ -1768,6 +1768,41 @@ QCheckBox::checked{
                    </size>
                   </property>
                  </spacer>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="pushButton_save">
+                  <property name="minimumSize">
+                   <size>
+                    <width>40</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>40</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton{
+	border-radius: 10px;
+	color: rgb(34,36,44);
+	border: none;
+	font: 15px;
+	color: white;
+	background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:1, y2:1, stop:0.507463 rgba(41, 170, 227, 255), stop:0.512438 rgba(22, 158, 206, 255));
+	
+	image: url(:/icons/icons/icons8-gallery-25.png);
+}
+
+QPushButton::hover{
+	background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:1, y2:1, stop:0.507463 rgba(41, 170, 227, 230), stop:0.512438 rgba(22, 158, 206, 230));
+}</string>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
                 </item>
                 <item>
                  <widget class="QPushButton" name="pushButton_clean">
